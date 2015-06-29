@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/createLoginDialog"
+    android:layout_width="@dimen/alert_width_create"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background_create"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/custom_image_create"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/base_color"
+            app:met_primaryColor="@color/color_main"
+            app:met_clearButton="true"
+            android:hint="Enter your e-mail"
+            android:layout_marginTop="5dp"
+            android:id="@+id/editTextLogin2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/base_color"
+            app:met_primaryColor="@color/color_main"
+            app:met_clearButton="true"
+            android:id="@+id/editTextPass2"
+            android:hint="Enter your password"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:inputType="textPassword" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@color/base_color"
+            app:met_primaryColor="@color/color_main"
+            app:met_clearButton="true"
+            android:hint="Confirm your password"
+            android:layout_marginTop="5dp"
+            android:id="@+id/editTextPassConfirm2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:inputType="textPassword"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_button_create"
+            style="@style/dialog_blue_button"
+            android:background="@drawable/gray_button_background"
+            android:layout_marginRight="10dp"
+            android:text="Cancel"
+            android:onClick="onDialogButtonCreate"/>
+
+        <Button
+            android:id="@+id/confirm_button_create"
+            style="@style/dialog_blue_button"
+            android:text="Create"
+            android:onClick="onDialogButtonCreate"/>
+    </LinearLayout>
+</LinearLayout>
