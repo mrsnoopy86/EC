@@ -2,6 +2,7 @@ package com.smithysoft.englishclub.activity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
@@ -34,15 +35,17 @@ public class StartScreen extends Activity {
     }
 
     public void onSingIn(View view) {
-        if(!TextUtils.isEmpty(login.getText().toString()) || !TextUtils.isEmpty(password.getText().toString())){
-            if(login.getText().toString().equals("tremtyachiy@gmail.com") && password.getText().toString().equals("tremtyachiy")){
-                Toast.makeText(this, "Sing in", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Login or password incorrect", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Input your e-mail and password", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent(this, TestActivity.class);
+        startActivity(intent);
+//        if(!TextUtils.isEmpty(login.getText().toString()) || !TextUtils.isEmpty(password.getText().toString())){
+//            if(login.getText().toString().equals("tremtyachiy@gmail.com") && password.getText().toString().equals("tremtyachiy")){
+//                Toast.makeText(this, "Sing in", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(this, "Login or password incorrect", Toast.LENGTH_SHORT).show();
+//            }
+//        } else {
+//            Toast.makeText(this, "Input your e-mail and password", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     @Override

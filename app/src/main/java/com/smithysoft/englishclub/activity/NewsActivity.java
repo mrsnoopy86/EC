@@ -1,5 +1,6 @@
 package com.smithysoft.englishclub.activity;
 
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
