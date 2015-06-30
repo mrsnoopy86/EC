@@ -31,4 +31,5 @@ dependencies {
     compile('com.mikepenz:materialdrawer:3.0.6@aar') {
         transitive = true
     }
+    compile 'com.shamanland:facebook-like-button:0.1.8'
 }

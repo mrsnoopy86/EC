@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/imagephoto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="IT English District"
+            android:id="@+id/textView2"
+            android:gravity="bottom"
+            android:textColor="@color/color_main"
+            android:layout_marginLeft="10dp" />
+    </TableRow>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/imageView4"
+        android:background="@color/color_main"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="A birthday is just another day where you go to work and people give you love. Age is just a state of mind, and you are as old as you think you are. You have to count your blessings and be happy."
+        android:id="@+id/textView3"
+        android:layout_marginLeft="60dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Do you want come :"
+        android:id="@+id/textView4"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_main" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:id="@+id/radioButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:id="@+id/radioButton2" />
+    </RadioGroup>
+
+    <com.shamanland.facebook.likebutton.FacebookLikePlugin
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp">
+
+        <com.shamanland.facebook.likebutton.FacebookLikeButton
+            style="@style/Widget.FacebookLikeButton"
+            app:pageUrl="http://blog.shamanland.com/"
+            app:pageTitle="Developer's notes"
+            app:pageText="This is blog about Android development."
+            app:pagePicture="@drawable/ic_launcher"
+            />
+        <com.shamanland.facebook.likebutton.FacebookLikeBox
+            style="@style/Widget.FacebookLikeBox"
+            app:calloutMarker="left"
+            />
+    </com.shamanland.facebook.likebutton.FacebookLikePlugin>
+</LinearLayout>
