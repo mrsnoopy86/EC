@@ -32,4 +32,6 @@ dependencies {
         transitive = true
     }
     compile 'com.shamanland:facebook-like-button:0.1.8'
+    compile 'com.diogobernardino:williamchart:1.7.0'
+    compile 'com.github.amlcurran.showcaseview:library:5.0.0'
 }
