@@ -33,9 +33,14 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
-        android:background="@drawable/action_create"
         android:orientation="vertical"
         android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/action_create">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/editTextLogin"
@@ -43,24 +48,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:hint="Enter your e-mail"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
             app:met_baseColor="@color/base_color"
             app:met_clearButton="true"
             app:met_floatingLabel="normal"
-            app:met_primaryColor="@color/color_main"
-            app:met_singleLineEllipsis="true" />
+            app:met_primaryColor="@color/color_main" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/action_create"
+        android:layout_marginTop="5dp">
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:background="@drawable/action_create"
             android:id="@+id/editTextPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your password"
             android:inputType="textPassword"
             android:password="true"
+            android:singleLine="true"
             app:met_baseColor="@color/base_color"
             app:met_clearButton="true"
             app:met_floatingLabel="normal"
-            app:met_primaryColor="@color/color_main"
-            app:met_singleLineEllipsis="true" />
+            app:met_primaryColor="@color/color_main" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

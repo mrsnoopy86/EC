@@ -59,14 +59,14 @@
             android:text="Do you want come :"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/color_main"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RadioButton
                 android:id="@+id/radioButton"
@@ -80,11 +80,6 @@
                 android:layout_height="wrap_content"
                 android:text="No" />
         </RadioGroup>
-
-        <com.db.chart.view.BarChartView
-            android:id="@+id/linechart"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"/>
 
         <com.shamanland.facebook.likebutton.FacebookLikePlugin
             android:layout_width="wrap_content"

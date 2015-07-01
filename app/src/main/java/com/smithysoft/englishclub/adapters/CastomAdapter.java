@@ -1,6 +1,8 @@
 package com.smithysoft.englishclub.adapters;
 
 import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.db.chart.listener.OnEntryClickListener;
+import com.db.chart.view.BarChartView;
+import com.db.chart.view.HorizontalBarChartView;
 import com.nineoldandroids.view.ViewHelper;
 import com.smithysoft.englishclub.R;
 import com.smithysoft.englishclub.utils.Item;
@@ -69,4 +74,5 @@ public class CastomAdapter extends BaseAdapter {
 
         return convertView;
     }
+
 }

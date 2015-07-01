@@ -1,16 +1,14 @@
 package com.smithysoft.englishclub.activity;
 
-import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
 import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
 import com.github.amlcurran.showcaseview.ShowcaseView;
-import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.smithysoft.englishclub.R;
 import com.smithysoft.englishclub.adapters.CastomAdapter;
 import com.smithysoft.englishclub.utils.Item;
@@ -20,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by User on 30.06.2015.
  */
-public class TestActivity extends Activity implements OnShowcaseEventListener{
+public class TestActivity extends ActionBarActivity implements OnShowcaseEventListener{
     ListView lv;
     ArrayList<Item> list = new ArrayList<>();
     CastomAdapter castomAdapter;
@@ -37,23 +35,28 @@ public class TestActivity extends Activity implements OnShowcaseEventListener{
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(castomAdapter);
         castomAdapter.notifyDataSetChanged();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        toolbar.setTitle("Ivent");
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        setSupportActionBar(toolbar);
 
-        RelativeLayout.LayoutParams lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        lps.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        int margin = ((Number) (getResources().getDisplayMetrics().density * 12)).intValue();
-        lps.setMargins(margin, margin, margin, margin+80);
-
-        ViewTarget target = new ViewTarget(R.id.listView, this);
-        sv = new ShowcaseView.Builder(this, true)
-                .setTarget(target)
-                .setContentTitle("Example")
-                .setContentText("Now you can learning")
-                .setStyle(R.style.CustomShowcaseTheme2)
-                .setShowcaseEventListener(this)
-                .build();
-        sv.setButtonPosition(lps);
-        sv.show();
+//        RelativeLayout.LayoutParams lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        lps.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+//        lps.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+//        int margin = ((Number) (getResources().getDisplayMetrics().density * 12)).intValue();
+//        lps.setMargins(margin, margin, margin, margin+80);
+//
+//        ViewTarget target = new ViewTarget(R.id.listView, this);
+//        sv = new ShowcaseView.Builder(this, true)
+//                .setTarget(target)
+//                .setContentTitle("Example")
+//                .setContentText("Now you can learning")
+//                .setStyle(R.style.CustomShowcaseTheme2)
+//                .setShowcaseEventListener(this)
+//                .build();
+//        sv.setButtonPosition(lps);
+//        sv.show();
     }
 
     private void fillArray() {
