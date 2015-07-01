@@ -56,8 +56,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Do you want come :"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Your choice :"
+            android:textSize="16sp"
             android:textColor="@color/color_main"
             android:visibility="visible"/>
 
@@ -72,13 +72,19 @@
                 android:id="@+id/radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes" />
+                android:text="Football" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="Golf" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volleyball" />
         </RadioGroup>
 
         <com.shamanland.facebook.likebutton.FacebookLikePlugin
