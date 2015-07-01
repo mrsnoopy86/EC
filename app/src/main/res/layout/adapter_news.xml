@@ -59,7 +59,9 @@
             android:text="Your choice :"
             android:textSize="16sp"
             android:textColor="@color/color_main"
-            android:visibility="visible"/>
+            android:visibility="visible"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="5dp"/>
 
         <RadioGroup
             android:id="@+id/radioGroup"
