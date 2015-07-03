@@ -35,4 +35,5 @@ dependencies {
     compile 'com.diogobernardino:williamchart:1.7.0'
     compile 'com.github.amlcurran.showcaseview:library:5.0.0'
     compile 'com.akexorcist:RoundCornerProgressBar:1.2.0'
+    compile 'com.yalantis:flipviewpager:1.0.0'
 }
