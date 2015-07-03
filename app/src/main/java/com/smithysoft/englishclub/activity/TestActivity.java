@@ -32,6 +32,7 @@ public class TestActivity extends ActionBarActivity implements OnShowcaseEventLi
         castomAdapter = new CastomAdapter(this,list);
         fillArray();
 
+
         lv = (ListView) findViewById(R.id.listView);
         lv.setAdapter(castomAdapter);
         castomAdapter.notifyDataSetChanged();
