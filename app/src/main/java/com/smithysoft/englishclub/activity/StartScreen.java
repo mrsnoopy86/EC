@@ -31,7 +31,10 @@ public class StartScreen extends Activity {
     }
 
     public void onCreateProfile(View view) {
-        showDialog(DIALOG_CREATE_PROFILE);
+
+//        showDialog(DIALOG_CREATE_PROFILE);
+        Intent intent = new Intent(this, CreateProfileActivity.class);
+        startActivity(intent);
     }
 
     public void onSingIn(View view) {
