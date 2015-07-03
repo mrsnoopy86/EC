@@ -24,7 +24,6 @@ public class CreateProfileActivity extends ActionBarActivity {
         tabHost.setup();
 
         TabHost.TabSpec spec = tabHost.newTabSpec("tag1");
-
         spec.setContent(R.id.tab1);
         spec.setIndicator("Кот");
         tabHost.addTab(spec);

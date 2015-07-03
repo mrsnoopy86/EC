@@ -33,7 +33,7 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/color_main"></TabWidget>
+                android:background="#ccc"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -44,15 +44,66 @@
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/bg1">
 
                     <EditText
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText"
+                        android:id="@+id/editTextFirstName"
                         android:layout_gravity="center_horizontal"
                         android:hint="First Name"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#ccc"
+                        android:textColorHint="#ccc"/>
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editTextSecondName"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Second Name"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#ccc"
+                        android:textColorHint="#ccc"/>
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editTextYourEmail"
+                        android:layout_gravity="center_horizontal"
+                        android:hint="Your Email"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#ccc"
+                        android:textColorHint="#ccc"/>
+
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:ems="10"
+                        android:id="@+id/editTextPass"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:hint="Pass"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#ccc"
+                        android:textColorHint="#ccc"/>
+
+                    <EditText
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:ems="10"
+                        android:id="@+id/editTextPassRepeat"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:hint="Pass again"
+                        android:layout_marginTop="20dp"
+                        android:textColor="#ccc"
+                        android:textColorHint="#ccc"/>
+
 
                 </LinearLayout>
 
@@ -76,6 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"></LinearLayout>
+
             </FrameLayout>
         </LinearLayout>
     </TabHost>
