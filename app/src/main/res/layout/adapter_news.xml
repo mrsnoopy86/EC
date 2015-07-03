@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <RadioButton
                 android:id="@+id/radioButton"
@@ -104,7 +104,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:visibility="gone">
 
             <TableRow
                 android:layout_width="match_parent"
