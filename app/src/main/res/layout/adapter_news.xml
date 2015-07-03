@@ -4,8 +4,8 @@
     android:id="@+id/mainLin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/md_white_1000"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <TableRow
@@ -19,7 +19,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/imagephoto"
-            android:src="@drawable/ic_logo_flag"/>
+            android:src="@drawable/ic_logo_flag" />
 
         <TextView
             android:id="@+id/textViewTitle"
@@ -57,19 +57,19 @@
             android:id="@+id/textViewQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="5dp"
             android:text="Your choice :"
-            android:textSize="16sp"
             android:textColor="@color/color_main"
-            android:visibility="visible"
-            android:layout_marginLeft="60dp"
-            android:layout_marginBottom="5dp"/>
+            android:textSize="16sp"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
-            android:layout_marginLeft="60dp"
             android:layout_height="1dp"
+            android:layout_marginLeft="60dp"
             android:background="@color/color_main" />
 
         <RadioGroup
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <RadioButton
                 android:id="@+id/radioButton"
@@ -97,6 +97,111 @@
                 android:layout_height="wrap_content"
                 android:text="Volleyball" />
         </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/progressBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.akexorcist.roundcornerprogressbar.IconRoundCornerProgressBar
+                    android:id="@+id/progressBarFirst"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    app:rcBackgroundColor="@color/gray_btn_bg_color"
+                    app:rcBackgroundPadding="2dp"
+                    app:rcIconPadding="2dp"
+                    app:rcIconSize="20dp"
+                    app:rcIconSrc="@drawable/ic_logo_flag"
+                    app:rcMax="100"
+                    app:rcProgress="10"
+                    app:rcProgressColor="@color/base_color" />
+
+                <TextView
+                    android:id="@+id/textCountFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@color/base_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.akexorcist.roundcornerprogressbar.IconRoundCornerProgressBar
+                    android:id="@+id/progressBarSecond"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    app:rcBackgroundColor="@color/gray_btn_bg_color"
+                    app:rcBackgroundPadding="2dp"
+                    app:rcIconPadding="2dp"
+                    app:rcIconSize="20dp"
+                    app:rcIconSrc="@drawable/ic_logo_flag"
+                    app:rcMax="100"
+                    app:rcProgress="85"
+                    app:rcProgressColor="@color/md_green_500" />
+
+                <TextView
+                    android:id="@+id/textCountSecond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="85"
+                    android:textColor="@color/md_green_500"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.akexorcist.roundcornerprogressbar.IconRoundCornerProgressBar
+                    android:id="@+id/progressBarThird"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    app:rcBackgroundColor="@color/gray_btn_bg_color"
+                    app:rcBackgroundPadding="2dp"
+                    app:rcIconPadding="2dp"
+                    app:rcIconSize="20dp"
+                    app:rcIconSrc="@drawable/ic_logo_flag"
+                    app:rcMax="100"
+                    app:rcProgress="54"
+                    app:rcProgressColor="@color/md_red_500" />
+
+                <TextView
+                    android:id="@+id/textCounThird"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text="54"
+                    android:textColor="@color/md_red_500"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </LinearLayout>
 
         <com.shamanland.facebook.likebutton.FacebookLikePlugin
             android:layout_width="wrap_content"
