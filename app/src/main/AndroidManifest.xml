@@ -28,10 +28,10 @@
         <activity
             android:name="com.shamanland.facebook.likebutton.FacebookLikeActivity"
             android:label="@string/com_shamanland_facebook"
-            android:theme="@style/Theme.Facebook.Like"
-            />
-        <activity android:name=".activity.TestActivity"
-            android:label="TestActivity"/>
+            android:theme="@style/Theme.Facebook.Like" />
+        <activity
+            android:name=".activity.TestActivity"
+            android:label="TestActivity" />
     </application>
 
 </manifest>
