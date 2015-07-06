@@ -79,6 +79,7 @@ public class CastomAdapter extends BaseAdapter {
             holder = (Holder) convertView.getTag();
         }
 
+
         if(position%3 == 0){
             holder.photogrid.setVisibility(View.VISIBLE);
             holder.golosovanie.setVisibility(View.GONE);
