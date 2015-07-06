@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -41,6 +42,9 @@ public class CastomAdapter extends BaseAdapter {
         TextView textViewContent;
         TextView textViewQuestion;
         RadioGroup radioGrouproup;
+        LinearLayout golosovanie;
+        LinearLayout photogrid;
+        LinearLayout progressBarLayout;
     }
     @Override
     public int getCount() {
@@ -67,12 +71,33 @@ public class CastomAdapter extends BaseAdapter {
             holder.textViewTitle = (TextView) convertView.findViewById(R.id.textViewTitle);
             holder.textViewContent = (TextView) convertView.findViewById(R.id.textViewQuestion);
             holder.radioGrouproup = (RadioGroup) convertView.findViewById(R.id.radioGroup);
+            holder.golosovanie = (LinearLayout) convertView.findViewById(R.id.golosovanie);
+            holder.photogrid = (LinearLayout) convertView.findViewById(R.id.photogrid);
+            holder.progressBarLayout = (LinearLayout) convertView.findViewById(R.id.progressBarLayout);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
         }
 
+        if(position%3 == 0){
+            holder.photogrid.setVisibility(View.VISIBLE);
+            holder.golosovanie.setVisibility(View.GONE);
+        } else {
+            if(position%2 == 0){
+                holder.photogrid.setVisibility(View.GONE);
+                holder.golosovanie.setVisibility(View.VISIBLE);
+                holder.radioGrouproup.setVisibility(View.VISIBLE);
+                holder.progressBarLayout.setVisibility(View.GONE);
+            } else {
+                holder.photogrid.setVisibility(View.GONE);
+                holder.golosovanie.setVisibility(View.VISIBLE);
+                holder.radioGrouproup.setVisibility(View.GONE);
+                holder.progressBarLayout.setVisibility(View.VISIBLE);
+            }
+        }
+
         return convertView;
     }
+
 
 }
