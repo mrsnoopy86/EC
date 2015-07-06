@@ -30,8 +30,6 @@ public class CreateProfileActivity extends ActionBarActivity {
     private void initSlider() {
         sliderShow = (SliderLayout) findViewById(R.id.slider);
 
-        sliderShow.setCustomAnimation(new DescriptionAnimation());
-
         DefaultSliderView DefaultSliderView = new DefaultSliderView(this);
         DefaultSliderView DefaultSliderViewTwo = new DefaultSliderView(this);
         DefaultSliderView DefaultSliderViewThre = new DefaultSliderView(this);
@@ -43,8 +41,6 @@ public class CreateProfileActivity extends ActionBarActivity {
         sliderShow.setPresetTransformer(SliderLayout.Transformer.ZoomOut);
         sliderShow.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         sliderShow.setCustomIndicator((PagerIndicator) findViewById(R.id.custom_indicator));
-
-
 
         sliderShow.addSlider(DefaultSliderView);
         sliderShow.addSlider(DefaultSliderViewTwo);
