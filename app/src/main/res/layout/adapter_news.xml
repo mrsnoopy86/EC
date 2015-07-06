@@ -39,19 +39,23 @@
         android:layout_marginTop="2dp"
         android:background="@color/color_main" />
 
+    <TextView
+        android:id="@+id/textViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
+        android:text="A birthday is just another day where you go to work and people give you love. Age is just a state of mind, and you are as old as you think you are. You have to count your blessings and be happy." />
+
+    <!--голосование-->
+
     <LinearLayout
+        android:id="@+id/golosovanie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="5dp">
-
-        <TextView
-            android:id="@+id/textViewContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="5dp"
-            android:text="A birthday is just another day where you go to work and people give you love. Age is just a state of mind, and you are as old as you think you are. You have to count your blessings and be happy." />
+        android:padding="5dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/textViewQuestion"
@@ -203,26 +207,160 @@
 
             </TableRow>
         </LinearLayout>
+    </LinearLayout>
 
-        <com.shamanland.facebook.likebutton.FacebookLikePlugin
-            android:layout_width="wrap_content"
+    <!--голосование-->
+
+    <!--новости-->
+
+    <LinearLayout
+        android:id="@+id/photogrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="10dp">
 
-            <com.shamanland.facebook.likebutton.FacebookLikeButton
-                android:id="@+id/ffbook"
-                style="@style/Widget.FacebookLikeButton"
-                app:pagePicture="@drawable/ic_launcher"
-                app:pageText="This is blog about Android development."
-                app:pageTitle="Developer's notes"
-                app:pageUrl="http://blog.shamanland.com/" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <com.shamanland.facebook.likebutton.FacebookLikeBox
-                style="@style/Widget.FacebookLikeBox"
-                app:calloutMarker="left" />
-        </com.shamanland.facebook.likebutton.FacebookLikePlugin>
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/liza"/>
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/masha"/>
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/philip"/>
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/serg"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/masha"/>
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/liza"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
     </LinearLayout>
+
+    <!--новости-->
+
+    <!--ссылки-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gray_btn_bg_color"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_comment_black_24dp"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:gravity="center"
+            android:textSize="16sp">
+        </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="0.4"
+            android:gravity="center">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_reply_black_24dp"
+            android:layout_marginRight="5dp">
+
+        </ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Open link in web"
+            android:gravity="center"
+            android:textSize="16sp">
+        </TextView>
+
+        </LinearLayout>
+    </TableRow>
+
+    <!--ссылки-->
+
+    <com.shamanland.facebook.likebutton.FacebookLikePlugin
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <com.shamanland.facebook.likebutton.FacebookLikeButton
+            android:id="@+id/ffbook"
+            style="@style/Widget.FacebookLikeButton"
+            app:pagePicture="@drawable/ic_launcher"
+            app:pageText="This is blog about Android development."
+            app:pageTitle="Developer's notes"
+            app:pageUrl="http://blog.shamanland.com/" />
+
+        <com.shamanland.facebook.likebutton.FacebookLikeBox
+            style="@style/Widget.FacebookLikeBox"
+            app:calloutMarker="left" />
+    </com.shamanland.facebook.likebutton.FacebookLikePlugin>
+
 </LinearLayout>
