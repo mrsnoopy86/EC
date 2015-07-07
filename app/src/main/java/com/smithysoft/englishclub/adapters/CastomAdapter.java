@@ -45,10 +45,10 @@ public class CastomAdapter extends BaseAdapter {
     }
 
     class Holder {
-        ImageView imageViewLogo;
-        TextView textViewTitle;
-        TextView textViewContent;
-        TextView textViewQuestion;
+//        ImageView imageViewLogo;
+//        TextView textViewTitle;
+//        TextView textViewContent;
+//        TextView textViewQuestion;
         RadioGroup radioGrouproup;
         LinearLayout golosovanie;
         LinearLayout photogrid;
@@ -79,9 +79,9 @@ public class CastomAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.adapter_news, parent, false);
             holder = new Holder();
-            holder.imageViewLogo = (ImageView) convertView.findViewById(R.id.imageViewLogo);
-            holder.textViewTitle = (TextView) convertView.findViewById(R.id.textViewTitle);
-            holder.textViewContent = (TextView) convertView.findViewById(R.id.textViewQuestion);
+//            holder.imageViewLogo = (ImageView) convertView.findViewById(R.id.imageViewLogo);
+//            holder.textViewTitle = (TextView) convertView.findViewById(R.id.textViewTitle);
+//            holder.textViewContent = (TextView) convertView.findViewById(R.id.textViewQuestion);
             holder.radioGrouproup = (RadioGroup) convertView.findViewById(R.id.radioGroup);
             holder.golosovanie = (LinearLayout) convertView.findViewById(R.id.golosovanie);
             holder.photogrid = (LinearLayout) convertView.findViewById(R.id.photogrid);
@@ -131,7 +131,8 @@ public class CastomAdapter extends BaseAdapter {
             holder.progressBarLayout.setVisibility(View.GONE);
         }
         handler = new Handler(){
-            public void handleMessage(Message msg){
+            @Override
+            public void handleMessage(Message msg) {
                 if(msg.what <= 10){
                     holder.progressBarFirst.setProgress(msg.what);
                     holder.progressBarSecond.setProgress(msg.what);
@@ -144,7 +145,7 @@ public class CastomAdapter extends BaseAdapter {
                         holder.progressBarSecond.setProgress(msg.what);
                     }
                 }
-            };
+            }
         };
 
     return convertView;
