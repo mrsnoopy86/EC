@@ -7,4 +7,10 @@
     <string name="title_activity_create_account">CreateAccount</string>
     <string name="btn_sign_in">Sign in</string>
     <string name="btn_join_us">Join us</string>
+    <string name="bu_clicking">By clicking Join now, you agree to English district\'s </string>
+    <string name="user_agreement">User Agreement,</string>
+    <string name="privasy"> Privacy Policy</string>
+    <string name="and">, and </string>
+    <string name="cookie_policy"> Cookie Policy</string>
+    <string name="alredy">Alredy have an account?</string>
 </resources>

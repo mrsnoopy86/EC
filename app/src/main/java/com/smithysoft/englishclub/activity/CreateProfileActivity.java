@@ -1,22 +1,27 @@
 package com.smithysoft.englishclub.activity;
 
+import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.smithysoft.englishclub.R;
+import com.smithysoft.englishclub.fragments.JoinNow;
 
 /**
  * Created by Admin on 28.06.2015.
  */
-public class CreateProfileActivity extends ActionBarActivity {
+public class CreateProfileActivity extends ActionBarActivity  {
     Toolbar toolbar;
     SliderLayout sliderShow;
+    JoinNow joinNow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,5 +64,9 @@ public class CreateProfileActivity extends ActionBarActivity {
     protected void onStop() {
         sliderShow.stopAutoCycle();
         super.onStop();
+    }
+
+    public void onSignIn(View view) {
+        Toast.makeText(this,"Go in fragment",Toast.LENGTH_SHORT).show();
     }
 }
