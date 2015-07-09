@@ -1,0 +1,191 @@
+package com.smithysoft.englishclub.newactivity;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.TextureView;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.smithysoft.englishclub.R;
+
+/**
+ * Created by Admin on 09.07.2015.
+ */
+public class LoginScreen extends Activity implements View.OnTouchListener{
+    private Button vk_button;
+    private Button facebook_button;
+    private Button twitter_button;
+    private Button youtube_button;
+    private Button linkedin_button;
+    private Button instagram_button;
+    private Button open_social;
+    private Button button_log_in;
+    private Button button_sing_up;
+    private Button button_log_second_in;
+    private TextView tvAbout;
+    private EditText etLogin;
+    private EditText etPassword;
+    private int OPEN_SOCIAL = 0;
+    private final int DURATION_ANIMATION_SOCIAL = 150;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.loginscreen);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.loginscreen);
+        vk_button = (Button) findViewById(R.id.vk_button);
+        facebook_button = (Button) findViewById(R.id.facebook_button);
+        twitter_button = (Button) findViewById(R.id.twitter_button);
+        youtube_button = (Button) findViewById(R.id.youtube_button);
+        linkedin_button = (Button) findViewById(R.id.linkedin_button);
+        instagram_button = (Button) findViewById(R.id.instagram_button);
+        open_social = (Button) findViewById(R.id.open_social);
+        button_log_in = (Button) findViewById(R.id.button_log_in_screen);
+        button_sing_up = (Button) findViewById(R.id.button_sing_up_screen);
+        button_log_second_in = (Button) findViewById(R.id.button_log_second_in);
+        tvAbout = (TextView) findViewById(R.id.tvAbout);
+        etLogin = (EditText) findViewById(R.id.et_login);
+        etPassword = (EditText) findViewById(R.id.et_password);
+        vk_button.setVisibility(View.GONE);
+        facebook_button.setVisibility(View.GONE);
+        twitter_button.setVisibility(View.GONE);
+        youtube_button.setVisibility(View.GONE);
+        linkedin_button.setVisibility(View.GONE);
+        instagram_button.setVisibility(View.GONE);
+        open_social.setVisibility(View.VISIBLE);
+        relativeLayout.setOnTouchListener(this);
+    }
+
+    public void onOpenSocial(View view){
+        openAnimationSocial();
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(OPEN_SOCIAL == 1) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                closeAnimationSocial();
+            }
+        }
+        return true;
+    }
+
+    public void onLogIn(View view){
+        openAnimationLoginIn();
+    }
+
+
+    private void openAnimationLoginIn(){
+        Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        Animation animation1 = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+        Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        Animation animation3 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.slide_in_down);
+        animation.setDuration(300);
+        animation1.setDuration(300);
+        animation2.setDuration(300);
+        animation3.setDuration(300);
+        animation3.setDuration(300);
+        animation4.setDuration(300);
+
+        button_log_in.setAnimation(animation3);
+        button_sing_up.setAnimation(animation1);
+        tvAbout.setAnimation(animation3);
+        button_log_in.setVisibility(View.GONE);
+        button_sing_up.setVisibility(View.GONE);
+        tvAbout.setVisibility(View.GONE);
+
+        button_log_second_in.setVisibility(View.VISIBLE);
+        etLogin.setVisibility(View.VISIBLE);
+        etPassword.setVisibility(View.VISIBLE);
+
+        button_log_second_in.setAnimation(animation4);
+        etLogin.setAnimation(animation);
+        etPassword.setAnimation(animation2);
+    }
+
+    private void closeAnimationLoginIn(){
+
+    }
+
+    private void openAnimationSocial(){
+        vk_button.setVisibility(View.VISIBLE);
+        facebook_button.setVisibility(View.VISIBLE);
+        twitter_button.setVisibility(View.VISIBLE);
+        youtube_button.setVisibility(View.VISIBLE);
+        linkedin_button.setVisibility(View.VISIBLE);
+        instagram_button.setVisibility(View.VISIBLE);
+
+        Animation animation = AnimationUtils.makeInAnimation(this, true);
+        animation.setStartOffset(150);
+        animation.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animation2 = AnimationUtils.makeInAnimation(this, true);
+        animation2.setStartOffset(250);
+        animation2.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animation3 = AnimationUtils.makeInAnimation(this, true);
+        animation3.setStartOffset(400);
+        animation3.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animation4 = AnimationUtils.makeInAnimation(this, true);
+        animation4.setStartOffset(550);
+        animation4.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animation5 = AnimationUtils.makeInAnimation(this, true);
+        animation5.setStartOffset(700);
+        animation5.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animation6 = AnimationUtils.makeInAnimation(this, true);
+        animation6.setStartOffset(850);
+        animation6.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animationOut = AnimationUtils.makeOutAnimation(this, true);
+        open_social.startAnimation(animationOut);
+        vk_button.startAnimation(animation);
+        facebook_button.startAnimation(animation2);
+        twitter_button.startAnimation(animation4);
+        youtube_button.startAnimation(animation6);
+        linkedin_button.startAnimation(animation3);
+        instagram_button.startAnimation(animation5);
+        open_social.setVisibility(View.GONE);
+        OPEN_SOCIAL = 1;
+    }
+
+    private void closeAnimationSocial(){
+        Animation animation = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation2 = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation3 = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation4 = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation5 = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation6 = AnimationUtils.makeOutAnimation(this, true);
+        animation.setStartOffset(150);
+        animation.setDuration(DURATION_ANIMATION_SOCIAL);
+        animation2.setStartOffset(250);
+        animation2.setDuration(DURATION_ANIMATION_SOCIAL);
+        animation3.setStartOffset(400);
+        animation3.setDuration(DURATION_ANIMATION_SOCIAL);
+        animation4.setStartOffset(550);
+        animation4.setDuration(DURATION_ANIMATION_SOCIAL);
+        animation5.setStartOffset(700);
+        animation5.setDuration(DURATION_ANIMATION_SOCIAL);
+        animation6.setStartOffset(850);
+        animation6.setDuration(DURATION_ANIMATION_SOCIAL);
+        Animation animationOut = AnimationUtils.makeInAnimation(this, true);
+        vk_button.startAnimation(animation);
+        facebook_button.startAnimation(animation2);
+        twitter_button.startAnimation(animation4);
+        youtube_button.startAnimation(animation6);
+        linkedin_button.startAnimation(animation3);
+        instagram_button.startAnimation(animation5);
+        vk_button.setVisibility(View.GONE);
+        facebook_button.setVisibility(View.GONE);
+        twitter_button.setVisibility(View.GONE);
+        youtube_button.setVisibility(View.GONE);
+        linkedin_button.setVisibility(View.GONE);
+        instagram_button.setVisibility(View.GONE);
+        open_social.startAnimation(animationOut);
+        open_social.setVisibility(View.VISIBLE);
+        OPEN_SOCIAL = 0;
+    }
+}
