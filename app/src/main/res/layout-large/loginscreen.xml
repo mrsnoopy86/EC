@@ -23,7 +23,7 @@
         android:layout_alignBottom="@+id/imageView10"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginBottom="30dp"
         android:background="#ff98192a"
         android:text="Log In"
@@ -37,7 +37,7 @@
         android:layout_alignBottom="@+id/imageView10"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="150dp"
         android:layout_marginBottom="30dp"
         android:background="#ff98192a"
         android:text="Sing Up"
@@ -54,14 +54,14 @@
         android:layout_alignTop="@+id/imageView10"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:gravity="center"/>
 
     <Button
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/open_social"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/ic_button_slider"
@@ -69,10 +69,10 @@
         android:onClick="onOpenSocial"/>
 
     <Button
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/button_ask_question"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="75dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="@drawable/ic_button_slider"
@@ -82,11 +82,11 @@
 
     <LinearLayout
         android:id="@+id/ask_question"
-        android:layout_width="250dp"
-        android:layout_height="225dp"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="75dp"
         android:background="#ff000000"
         android:gravity="center_horizontal"
         android:padding="5dp"
@@ -113,7 +113,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="190dp"
             android:id="@+id/editText6"
             android:layout_gravity="center_horizontal"
             android:hint="Question"
@@ -133,11 +133,11 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/ic_vk_button"
         android:id="@+id/vk_button"
         android:layout_alignParentTop="true"
@@ -146,9 +146,9 @@
         android:visibility="gone"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@drawable/ic_facebook_button"
         android:id="@+id/facebook_button"
         android:layout_below="@+id/vk_button"
@@ -157,9 +157,9 @@
         android:visibility="gone"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@drawable/ic_linkedin_button"
         android:id="@+id/linkedin_button"
         android:layout_below="@+id/facebook_button"
@@ -168,9 +168,9 @@
         android:visibility="gone"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@drawable/ic_twitter_button"
         android:id="@+id/twitter_button"
         android:layout_below="@+id/linkedin_button"
@@ -179,9 +179,9 @@
         android:visibility="gone"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@drawable/ic_instagram_button"
         android:id="@+id/instagram_button"
         android:layout_below="@+id/twitter_button"
@@ -190,9 +190,9 @@
         android:visibility="gone"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="2dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
         android:background="@drawable/ic_youtube_button"
         android:id="@+id/youtube_button"
         android:layout_below="@+id/instagram_button"

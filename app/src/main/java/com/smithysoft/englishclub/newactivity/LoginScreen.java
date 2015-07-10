@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -31,8 +32,57 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
     private TextView tvAbout;
     private EditText etLogin;
     private EditText etPassword;
+    private LinearLayout ask_question;
+    private Button button_ask_question;
     private int OPEN_SOCIAL = 0;
+    private int OPEN_ASK = 0;
+    private int OPEN_LOGIN_IN = 0;
     private final int DURATION_ANIMATION_SOCIAL = 150;
+
+    public void onOpenSocial(View view){
+        openAnimationSocial();
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(OPEN_SOCIAL == 1) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                closeAnimationSocial();
+            }
+        }
+        if(OPEN_ASK == 1) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                closeAskQuestion();
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(OPEN_LOGIN_IN == 1){
+            closeAnimationLoginIn();
+            OPEN_LOGIN_IN = 0;
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    public void onOpenAskQuestion(View view) {
+        openAskQuestion();
+    }
+
+    public void onLogIn(View view){
+        openAnimationLoginIn();
+        if(OPEN_SOCIAL == 1){
+            closeAnimationSocial();
+            OPEN_SOCIAL = 0;
+        }
+        if(OPEN_ASK == 1){
+            closeAskQuestion();
+            OPEN_ASK = 0;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +102,8 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         tvAbout = (TextView) findViewById(R.id.tvAbout);
         etLogin = (EditText) findViewById(R.id.et_login);
         etPassword = (EditText) findViewById(R.id.et_password);
+        ask_question = (LinearLayout) findViewById(R.id.ask_question);
+        button_ask_question = (Button) findViewById(R.id.button_ask_question);
         vk_button.setVisibility(View.GONE);
         facebook_button.setVisibility(View.GONE);
         twitter_button.setVisibility(View.GONE);
@@ -62,26 +114,8 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         relativeLayout.setOnTouchListener(this);
     }
 
-    public void onOpenSocial(View view){
-        openAnimationSocial();
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if(OPEN_SOCIAL == 1) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                closeAnimationSocial();
-            }
-        }
-        return true;
-    }
-
-    public void onLogIn(View view){
-        openAnimationLoginIn();
-    }
-
-
     private void openAnimationLoginIn(){
+        OPEN_LOGIN_IN = 1;
         Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
         Animation animation1 = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
         Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
@@ -93,35 +127,57 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         animation3.setDuration(300);
         animation3.setDuration(300);
         animation4.setDuration(300);
-
         button_log_in.setAnimation(animation3);
         button_sing_up.setAnimation(animation1);
         tvAbout.setAnimation(animation3);
         button_log_in.setVisibility(View.GONE);
         button_sing_up.setVisibility(View.GONE);
         tvAbout.setVisibility(View.GONE);
-
         button_log_second_in.setVisibility(View.VISIBLE);
         etLogin.setVisibility(View.VISIBLE);
         etPassword.setVisibility(View.VISIBLE);
-
         button_log_second_in.setAnimation(animation4);
         etLogin.setAnimation(animation);
         etPassword.setAnimation(animation2);
     }
 
     private void closeAnimationLoginIn(){
-
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        Animation animation2 = AnimationUtils.loadAnimation(this, android.R.anim.slide_out_right);
+        Animation animation3 = AnimationUtils.loadAnimation(this, android.R.anim.slide_in_left);
+        Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.slide_out_down);
+        animation.setDuration(300);
+        animation1.setDuration(300);
+        animation2.setDuration(300);
+        animation3.setDuration(300);
+        animation3.setDuration(300);
+        animation4.setDuration(300);
+        button_log_in.setAnimation(animation3);
+        button_sing_up.setAnimation(animation1);
+        tvAbout.setAnimation(animation3);
+        button_log_in.setVisibility(View.VISIBLE);
+        button_sing_up.setVisibility(View.VISIBLE);
+        tvAbout.setVisibility(View.VISIBLE);
+        button_log_second_in.setVisibility(View.GONE);
+        etLogin.setVisibility(View.GONE);
+        etPassword.setVisibility(View.GONE);
+        button_log_second_in.setAnimation(animation4);
+        etLogin.setAnimation(animation);
+        etPassword.setAnimation(animation2);
     }
 
     private void openAnimationSocial(){
+        if(OPEN_ASK == 1){
+            closeAskQuestion();
+            OPEN_ASK = 0;
+        }
         vk_button.setVisibility(View.VISIBLE);
         facebook_button.setVisibility(View.VISIBLE);
         twitter_button.setVisibility(View.VISIBLE);
         youtube_button.setVisibility(View.VISIBLE);
         linkedin_button.setVisibility(View.VISIBLE);
         instagram_button.setVisibility(View.VISIBLE);
-
         Animation animation = AnimationUtils.makeInAnimation(this, true);
         animation.setStartOffset(150);
         animation.setDuration(DURATION_ANIMATION_SOCIAL);
@@ -140,7 +196,7 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         Animation animation6 = AnimationUtils.makeInAnimation(this, true);
         animation6.setStartOffset(850);
         animation6.setDuration(DURATION_ANIMATION_SOCIAL);
-        Animation animationOut = AnimationUtils.makeOutAnimation(this, true);
+        Animation animationOut = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
         open_social.startAnimation(animationOut);
         vk_button.startAnimation(animation);
         facebook_button.startAnimation(animation2);
@@ -153,12 +209,12 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
     }
 
     private void closeAnimationSocial(){
-        Animation animation = AnimationUtils.makeOutAnimation(this, true);
-        Animation animation2 = AnimationUtils.makeOutAnimation(this, true);
-        Animation animation3 = AnimationUtils.makeOutAnimation(this, true);
-        Animation animation4 = AnimationUtils.makeOutAnimation(this, true);
-        Animation animation5 = AnimationUtils.makeOutAnimation(this, true);
-        Animation animation6 = AnimationUtils.makeOutAnimation(this, true);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation3 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation5 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        Animation animation6 = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
         animation.setStartOffset(150);
         animation.setDuration(DURATION_ANIMATION_SOCIAL);
         animation2.setStartOffset(250);
@@ -172,6 +228,7 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         animation6.setStartOffset(850);
         animation6.setDuration(DURATION_ANIMATION_SOCIAL);
         Animation animationOut = AnimationUtils.makeInAnimation(this, true);
+        animationOut.setStartOffset(900);
         vk_button.startAnimation(animation);
         facebook_button.startAnimation(animation2);
         twitter_button.startAnimation(animation4);
@@ -187,5 +244,35 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         open_social.startAnimation(animationOut);
         open_social.setVisibility(View.VISIBLE);
         OPEN_SOCIAL = 0;
+    }
+
+    private void openAskQuestion(){
+        if(OPEN_SOCIAL == 1){
+            closeAnimationSocial();
+            OPEN_SOCIAL = 0;
+        }
+        Animation animation = AnimationUtils.makeOutAnimation(this, true);
+        animation.setDuration(250);
+        button_ask_question.startAnimation(animation);
+        button_ask_question.setVisibility(View.GONE);
+        Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.slide_in_right_from_board);
+        animation1.setStartOffset(250);
+        animation1.setDuration(350);
+        ask_question.setVisibility(View.VISIBLE);
+        ask_question.startAnimation(animation1);
+        OPEN_ASK = 1;
+    }
+
+    private void closeAskQuestion(){
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        animation.setStartOffset(350);
+        animation.setDuration(250);
+        button_ask_question.startAnimation(animation);
+        button_ask_question.setVisibility(View.VISIBLE);
+        Animation animation1 = AnimationUtils.loadAnimation(this, R.anim.slide_out_right_from_board);
+        animation1.setDuration(350);
+        ask_question.setVisibility(View.GONE);
+        ask_question.startAnimation(animation1);
+        OPEN_ASK = 0;
     }
 }
