@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.smithysoft.englishclub.R;
+import com.smithysoft.englishclub.utils.AppNotification;
 
 /**
  * Created by Admin on 09.07.2015.
@@ -43,8 +44,7 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
     private int OPEN_ASK = 0;
     private int OPEN_LOGIN_IN = 0;
     private final int DURATION_ANIMATION_SOCIAL = 150;
-    private NotificationManager nm;
-    private final int NOTIFICATION_ID = 123;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,6 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         instagram_button.setVisibility(View.GONE);
         open_social.setVisibility(View.VISIBLE);
         relativeLayout.setOnTouchListener(this);
-        nm = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
     }
 
     public void onOpenSocial(View view){
@@ -284,25 +283,9 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
         OPEN_ASK = 0;
     }
 
-    public void showNotification(View view) {
-        Notification.Builder builder = new Notification.Builder(getApplicationContext());
 
-        Intent intent = new Intent(getApplicationContext(), LoginScreen.class);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
-
-        builder
-                .setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.ic_youtube_button)
-                .setLargeIcon(BitmapFactory.decodeResource(getApplication().getResources(), R.drawable.ic_youtube_button))
-                .setTicker("You haw a massage!")
-                .setWhen(System.currentTimeMillis())
-                .setAutoCancel(true)
-                .setContentTitle("Some massage!")
-                .setContentText("Look here for more details.");
-        Notification notification = builder.build();
-
-        nm.notify(NOTIFICATION_ID,notification);
+    public void onShowNotification(View view) {
+        AppNotification appNotification = new AppNotification(this);
+        appNotification.showNotification();
     }
 }

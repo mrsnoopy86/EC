@@ -223,7 +223,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:visibility="gone"
-        android:onClick="showNotification"/>
+        android:onClick="onShowNotification"/>
 
     <EditText
         android:layout_width="300dp"
