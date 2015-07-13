@@ -222,7 +222,8 @@
         android:layout_below="@+id/instagram_button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:onClick="showNotification"/>
 
     <EditText
         android:layout_width="300dp"
