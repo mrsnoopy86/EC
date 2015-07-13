@@ -3,7 +3,6 @@ package com.smithysoft.englishclub.newactivity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.TextureView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -38,6 +37,36 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
     private int OPEN_ASK = 0;
     private int OPEN_LOGIN_IN = 0;
     private final int DURATION_ANIMATION_SOCIAL = 150;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.loginscreen);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.loginscreen);
+        vk_button = (Button) findViewById(R.id.vk_button);
+        facebook_button = (Button) findViewById(R.id.facebook_button);
+        twitter_button = (Button) findViewById(R.id.twitter_button);
+        youtube_button = (Button) findViewById(R.id.youtube_button);
+        linkedin_button = (Button) findViewById(R.id.linkedin_button);
+        instagram_button = (Button) findViewById(R.id.instagram_button);
+        open_social = (Button) findViewById(R.id.open_social);
+        button_log_in = (Button) findViewById(R.id.button_log_in_screen);
+        button_sing_up = (Button) findViewById(R.id.button_sing_up_screen);
+        button_log_second_in = (Button) findViewById(R.id.button_log_second_in);
+        tvAbout = (TextView) findViewById(R.id.tvAbout);
+        etLogin = (EditText) findViewById(R.id.et_login);
+        etPassword = (EditText) findViewById(R.id.et_password);
+        ask_question = (LinearLayout) findViewById(R.id.ask_question);
+        button_ask_question = (Button) findViewById(R.id.button_ask_question);
+        vk_button.setVisibility(View.GONE);
+        facebook_button.setVisibility(View.GONE);
+        twitter_button.setVisibility(View.GONE);
+        youtube_button.setVisibility(View.GONE);
+        linkedin_button.setVisibility(View.GONE);
+        instagram_button.setVisibility(View.GONE);
+        open_social.setVisibility(View.VISIBLE);
+        relativeLayout.setOnTouchListener(this);
+    }
 
     public void onOpenSocial(View view){
         openAnimationSocial();
@@ -82,36 +111,6 @@ public class LoginScreen extends Activity implements View.OnTouchListener{
             closeAskQuestion();
             OPEN_ASK = 0;
         }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginscreen);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.loginscreen);
-        vk_button = (Button) findViewById(R.id.vk_button);
-        facebook_button = (Button) findViewById(R.id.facebook_button);
-        twitter_button = (Button) findViewById(R.id.twitter_button);
-        youtube_button = (Button) findViewById(R.id.youtube_button);
-        linkedin_button = (Button) findViewById(R.id.linkedin_button);
-        instagram_button = (Button) findViewById(R.id.instagram_button);
-        open_social = (Button) findViewById(R.id.open_social);
-        button_log_in = (Button) findViewById(R.id.button_log_in_screen);
-        button_sing_up = (Button) findViewById(R.id.button_sing_up_screen);
-        button_log_second_in = (Button) findViewById(R.id.button_log_second_in);
-        tvAbout = (TextView) findViewById(R.id.tvAbout);
-        etLogin = (EditText) findViewById(R.id.et_login);
-        etPassword = (EditText) findViewById(R.id.et_password);
-        ask_question = (LinearLayout) findViewById(R.id.ask_question);
-        button_ask_question = (Button) findViewById(R.id.button_ask_question);
-        vk_button.setVisibility(View.GONE);
-        facebook_button.setVisibility(View.GONE);
-        twitter_button.setVisibility(View.GONE);
-        youtube_button.setVisibility(View.GONE);
-        linkedin_button.setVisibility(View.GONE);
-        instagram_button.setVisibility(View.GONE);
-        open_social.setVisibility(View.VISIBLE);
-        relativeLayout.setOnTouchListener(this);
     }
 
     private void openAnimationLoginIn(){
