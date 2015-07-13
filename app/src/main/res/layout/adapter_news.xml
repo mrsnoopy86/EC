@@ -360,7 +360,8 @@
 
         <com.shamanland.facebook.likebutton.FacebookLikeBox
             style="@style/Widget.FacebookLikeBox"
-            app:calloutMarker="left" />
+            app:calloutMarker="left"
+            android:text="117"/>
     </com.shamanland.facebook.likebutton.FacebookLikePlugin>
 
 </LinearLayout>

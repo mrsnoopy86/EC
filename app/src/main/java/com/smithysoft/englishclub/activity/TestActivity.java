@@ -10,7 +10,7 @@ import android.widget.ListView;
 import com.github.amlcurran.showcaseview.OnShowcaseEventListener;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.smithysoft.englishclub.R;
-import com.smithysoft.englishclub.adapters.CastomAdapter;
+import com.smithysoft.englishclub.adapters.CustomAdapter;
 import com.smithysoft.englishclub.utils.Item;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class TestActivity extends ActionBarActivity implements OnShowcaseEventListener{
     ListView lv;
     ArrayList<Item> list = new ArrayList<>();
-    CastomAdapter castomAdapter;
+    CustomAdapter castomAdapter;
     ShowcaseView sv;
     private static final float ALPHA_DIM_VALUE = 0.1f;
 
@@ -29,7 +29,7 @@ public class TestActivity extends ActionBarActivity implements OnShowcaseEventLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_activity);
-        castomAdapter = new CastomAdapter(this,list);
+        castomAdapter = new CustomAdapter(this,list);
         fillArray();
 
 

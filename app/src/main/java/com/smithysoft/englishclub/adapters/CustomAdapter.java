@@ -32,13 +32,12 @@ import java.util.zip.Inflater;
 /**
  * Created by User on 30.06.2015.
  */
-public class CastomAdapter extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter {
     Context context;
     ArrayList<Item> list = new ArrayList<>();
     LayoutInflater inflater;
-    Handler handler;
 
-    public CastomAdapter(Context context, ArrayList<Item> list) {
+    public CustomAdapter(Context context, ArrayList<Item> list) {
         this.context = context;
         this.list = list;
         inflater = LayoutInflater.from(context);
@@ -93,34 +92,6 @@ public class CastomAdapter extends BaseAdapter {
         } else {
             holder = (Holder) convertView.getTag();
         }
-        holder.progressBarFirst.setProgress(0);
-        holder.progressBarSecond.setProgress(0);
-        holder.progressBarThird.setProgress(0);
-        holder.radioGrouproup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
-                if (checkedRadioButton.isChecked()) {
-                    holder.radioGrouproup.setVisibility(View.GONE);
-                    holder.progressBarLayout.setVisibility(View.VISIBLE);
-                    Thread thread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            for(int i = 0; i < 85; i++){
-                                try {
-                                    TimeUnit.MILLISECONDS.sleep(50);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
-                                handler.sendEmptyMessage(i);
-                            }
-                        }
-                    });
-                    thread.start();
-                }
-            }
-        });
-
         if (position % 2 == 0) {
             holder.photogrid.setVisibility(View.VISIBLE);
             holder.golosovanie.setVisibility(View.GONE);
@@ -130,24 +101,16 @@ public class CastomAdapter extends BaseAdapter {
             holder.radioGrouproup.setVisibility(View.VISIBLE);
             holder.progressBarLayout.setVisibility(View.GONE);
         }
-        handler = new Handler(){
+        holder.radioGrouproup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void handleMessage(Message msg) {
-                if(msg.what <= 10){
-                    holder.progressBarFirst.setProgress(msg.what);
-                    holder.progressBarSecond.setProgress(msg.what);
-                    holder.progressBarThird.setProgress(msg.what);
-                } else {
-                    if(msg.what <= 54){
-                        holder.progressBarSecond.setProgress(msg.what);
-                        holder.progressBarThird.setProgress(msg.what);
-                    } else {
-                        holder.progressBarSecond.setProgress(msg.what);
-                    }
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
+                if (checkedRadioButton.isChecked()) {
+                    holder.radioGrouproup.setVisibility(View.GONE);
+                    holder.progressBarLayout.setVisibility(View.VISIBLE);
                 }
             }
-        };
-
+        });
     return convertView;
     }
 }
